@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luis Morales | Frontend Developer</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <div class="lang-switch">
+      <button onclick="setLanguage('es')">ES</button>
+      <button onclick="setLanguage('en')">EN</button>
+    </div>
+    <h1>Luis Morales</h1>
+    <p id="subtitle" data-i18n="subtitle">
+      Frontend Developer | Angular | TypeScript
+    </p>
+    <div class="buttons">
+      <a href="#projects" data-i18n="viewProjects">View Projects</a>
+      <a href="./Files/Luis_Morales_Frontend_Developer_CV.pdf" target="_blank" data-i18n="downloadCV">
+        Download CV
+      </a>
+    </div>
+  </header>
+  <section id="about">
+    <h2 data-i18n="aboutTitle">
+      About Me
+    </h2>
+    <p data-i18n="aboutText">
+      Frontend developer with experience building web applications using Angular, TypeScript and modern JavaScript.
+      Currently working on enterprise applications integrating frontend interfaces with backend services using REST
+      APIs.
+      Passionate about clean code, reusable components and scalable frontend architectures.
+    </p>
+  </section>
+  <section id="projects">
+    <h2 data-i18n="projectsTitle">
+      Projects
+    </h2>
+    <div class="projects-grid">
+      <div class="card">
+        <h3 data-i18n="project1Title">
+          E-Commerce Challenge
+        </h3>
+        <p data-i18n="project1Desc">
+          Fullstack e-commerce developed in 7 days during the tryCatch challenge. The project includes product catalog
+          visualization, shopping cart functionality and CRUD operations for products and users.
+        </p>
+        <span>
+          HTML • CSS • JavaScript • Go • PostgreSQL
+        </span>
+        <div class="links">
+          <a href="https://github.com/Luiis24/HagaseUnEcommerce" target="_blank">GitHub</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3 data-i18n="project3Title">
+          SGMI - Maintenance System
+        </h3>
+        <p data-i18n="project3Desc">
+          Industrial maintenance management platform designed to track machinery components and maintenance processes.
+        </p>
+        <span>
+          React • Electron • Node.js • PostgreSQL
+        </span>
+        <div class="links">
+          <a href="https://github.com/Luiis24/Sistema-Para-La-Gestion-De-Mantenimiento" target="_blank">GitHub</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3 data-i18n="project2Title">
+          Bike Store
+        </h3>
+        <p data-i18n="project2Desc">
+          Fullstack web application for a bicycle store including authentication, product catalog, shopping cart and
+          checkout simulation.
+        </p>
+        <span>
+          React • Node.js • PostgreSQL
+        </span>
+        <div class="links">
+          <a href="https://github.com/Luiis24/Proyectos_Y_Trabajos/tree/Bike-Store" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="skills">
+    <h2 data-i18n="skillsTitle">
+      Technologies
+    </h2>
+    <ul>
+      <li>Angular</li>
+      <li>TypeScript</li>
+      <li>JavaScript</li>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>React</li>
+      <li>Node.js</li>
+      <li>Spring Boot</li>
+      <li>PostgreSQL</li>
+      <li>Git</li>
+    </ul>
+  </section>
+  <footer>
+    <p>© 2026 Luis Morales</p>
+    <div class="socials">
+      <a href="https://github.com/Luiis24" target="_blank">
+        GitHub
+      </a>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>
