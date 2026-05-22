@@ -6,12 +6,12 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background: #0f172a; /* Tu fondo oscuro original */
-  color: #f8fafc;      /* Un blanco más suave para descansar la vista */
+  background: #0f172a; 
+  color: #f8fafc;      
   line-height: 1.6;
 }
 
-/* --- Contenedor de Idioma (Corregido para que no se pise en móvil) --- */
+/* --- Contenedor de Idioma --- */
 .lang-switch {
   display: flex;
   justify-content: flex-end;
@@ -38,7 +38,7 @@ body {
   color: #38bdf8;
 }
 
-/* --- Header / Presentación (Alineado a la izquierda, look más Pro) --- */
+/* --- Header / Presentación --- */
 header {
   max-width: 900px;
   margin: 0 auto;
@@ -56,7 +56,7 @@ h1 {
 
 #subtitle {
   font-size: 20px;
-  color: #38bdf8; /* Azul tecnológico de acento */
+  color: #38bdf8; 
   font-weight: 400;
 }
 
@@ -77,7 +77,7 @@ h1 {
   display: inline-block;
 }
 
-/* Botón "Ver Proyectos" (Sólido) */
+/* Botón Izquierdo */
 .buttons a:first-child {
   background: #38bdf8;
   color: #0f172a;
@@ -87,7 +87,7 @@ h1 {
   background: #7dd3fc;
 }
 
-/* Botón "Descargar CV" (Delineado) */
+/* Botón Derecho */
 .buttons a:last-child {
   background: transparent;
   color: #f8fafc;
@@ -99,7 +99,7 @@ h1 {
   border-color: #94a3b8;
 }
 
-/* --- Secciones --- */
+/* --- Estructura de Secciones --- */
 section {
   max-width: 900px;
   margin: 0 auto;
@@ -119,6 +119,57 @@ h2 {
   font-size: 17px;
   color: #94a3b8;
   max-width: 800px;
+}
+
+/* --- Sección Experiencia Laboral (Timeline) --- */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.timeline-item {
+  background: #1e293b;
+  border-left: 3px solid #38bdf8; 
+  padding: 20px 25px;
+  border-radius: 0 8px 8px 0;
+  border-top: 1px solid #334155;
+  border-right: 1px solid #334155;
+  border-bottom: 1px solid #334155;
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.timeline-header h3 {
+  font-size: 1.25rem;
+  color: #f8fafc;
+  font-weight: 600;
+}
+
+.timeline-date {
+  font-size: 0.9rem;
+  color: #38bdf8;
+  font-family: monospace;
+  font-weight: 600;
+}
+
+.timeline-company {
+  font-size: 1rem;
+  color: #94a3b8;
+  font-weight: 600;
+  margin-top: 2px;
+  margin-bottom: 12px;
+}
+
+.timeline-item p {
+  font-size: 0.95rem;
+  color: #94a3b8;
 }
 
 /* --- Grid de Proyectos --- */
@@ -154,7 +205,7 @@ h2 {
   color: #94a3b8;
   font-size: 15px;
   margin-bottom: 15px;
-  flex-grow: 1; /* Esto hace que si una tarjeta tiene más texto, todas mantengan el mismo alto */
+  flex-grow: 1; 
 }
 
 .card span {
@@ -162,7 +213,7 @@ h2 {
   display: block;
   margin-bottom: 15px;
   font-size: 13px;
-  color: #38bdf8; /* Tecnologías resaltadas en azul sutil */
+  color: #38bdf8; 
 }
 
 .links {
@@ -183,7 +234,7 @@ h2 {
   color: #38bdf8;
 }
 
-/* --- Lista de Tecnologías (Badges / Píldoras) --- */
+/* --- Lista de Tecnologías (Badges) --- */
 #skills ul {
   list-style: none;
   padding: 0;
@@ -233,7 +284,7 @@ footer {
   color: #38bdf8;
 }
 
-/* --- Soporte para Pantallas Pequeñas (Móvil) --- */
+/* --- Responsivo --- */
 @media (max-width: 600px) {
   h1 {
     font-size: 36px;
@@ -246,6 +297,12 @@ footer {
   
   .buttons a {
     text-align: center;
+  }
+  
+  .timeline-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
   }
   
   footer {
