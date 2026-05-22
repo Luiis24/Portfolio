@@ -2,12 +2,12 @@ const translations = {
 
     en: {
 
-        subtitle: "Frontend Developer | Angular | TypeScript",
+        subtitle: "Full Stack Developer | Angular | Java | Spring Boot",
 
         aboutTitle: "About Me",
 
         aboutText:
-            "Frontend developer with experience building web applications using Angular, TypeScript and modern JavaScript. I currently work developing enterprise applications where I implement user interfaces and integrate them with backend services through REST APIs. I enjoy creating clean, maintainable code and designing reusable components that help scale large applications.",
+            "Full Stack Web Developer with over 2 years of experience in production environments, building and maintaining enterprise-grade web applications. My core expertise lies in designing scalable frontend architectures with Angular and building robust, secure backend services with Java and Spring Boot. I am deeply committed to writing Clean Code, applying SOLID principles, and collaborating under Agile methodologies to deliver high-quality software.",
 
         projectsTitle: "Projects",
 
@@ -36,12 +36,12 @@ const translations = {
 
     es: {
 
-        subtitle: "Desarrollador Frontend | Angular | TypeScript",
+        subtitle: "Desarrollador Full Stack | Angular | Java | Spring Boot",
 
         aboutTitle: "Sobre mí",
 
         aboutText:
-            "Desarrollador frontend con experiencia construyendo aplicaciones web utilizando Angular, TypeScript y JavaScript moderno. Actualmente trabajo desarrollando aplicaciones empresariales donde implemento interfaces de usuario e integro servicios backend mediante APIs REST. Me gusta escribir código limpio, crear componentes reutilizables y diseñar aplicaciones escalables.",
+            "Desarrollador Web Full Stack con más de 2 años de experiencia en entornos de producción, construyendo y manteniendo aplicaciones web empresariales. Mi especialidad se centra en el diseño de arquitecturas frontend escalables con Angular y el desarrollo de servicios backend robustos con Java y Spring Boot. Estoy altamente comprometido con la escritura de Código Limpio (Clean Code), la aplicación de principios SOLID y el trabajo bajo metodologías ágiles para asegurar software de alta calidad.",
 
         projectsTitle: "Proyectos",
 
@@ -79,7 +79,6 @@ function setLanguage(lang) {
     })
 
     document.documentElement.lang = lang
-
 }
 
 const userLang = navigator.language.startsWith("es") ? "es" : "en"
