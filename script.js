@@ -53,14 +53,19 @@ const translations = {
 
 function setLanguage(lang) {
     document.querySelectorAll("[data-i18n]").forEach(element => {
-        const key = element.getAttribute("data-i18n")
-        if (translations[lang][key]) {
-            element.innerText = translations[lang][key]
-        }
-    })
+        const key = element.getAttribute("data-i18n");
 
-    document.documentElement.lang = lang
+        if (translations[lang][key]) {
+            element.innerText = translations[lang][key];
+        }
+    });
+
+    document.documentElement.lang = lang;
+    localStorage.setItem("language", lang);
 }
+
+const savedLanguage = localStorage.getItem("language") || "es";
+setLanguage(savedLanguage);
 
 const userLang = navigator.language.startsWith("es") ? "es" : "en"
 setLanguage(userLang)
