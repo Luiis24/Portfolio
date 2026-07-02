@@ -67,5 +67,3 @@ function setLanguage(lang) {
 const savedLanguage = localStorage.getItem("language") || "es";
 setLanguage(savedLanguage);
 
-const userLang = navigator.language.startsWith("es") ? "es" : "en"
-setLanguage(userLang)
