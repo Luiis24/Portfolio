@@ -1,153 +1,221 @@
 <!DOCTYPE html>
 <html lang="es" data-theme="dark">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luis Morales | Desarrollador Full Stack</title>
-<meta name="description" content="Desarrollador Full Stack con Angular, Java y Spring Boot. Disponible para trabajo remoto.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luis Morales | Desarrollador Full Stack</title>
+  <meta name="description"
+    content="Desarrollador Full Stack con Angular, Java y Spring Boot. Disponible para trabajo remoto.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<div id="progress"></div>
-<nav id="nav">
-  <a href="#top" class="logo">luis<span>.dev</span></a>
-  <button id="burger" aria-label="Menu">☰</button>
-  <ul id="links">
-    <li><a href="#about" data-i18n="nAbout">Sobre mí</a></li>
-    <li><a href="#experience" data-i18n="nExp">Experiencia</a></li>
-    <li><a href="#projects" data-i18n="nProj">Proyectos</a></li>
-    <li><a href="#skills" data-i18n="nSkills">Tecnologías</a></li>
-    <li><a href="#contact" data-i18n="nContact">Contacto</a></li>
-    <li class="tools">
-      <button id="langBtn" aria-label="Idioma">EN</button>
-      <button id="themeBtn" aria-label="Tema">☀</button>
-    </li>
-  </ul>
-</nav>
+  <div id="progress"></div>
+  <nav id="nav">
+    <a href="#top" class="logo">luis<span>.dev</span></a>
+    <button id="burger" aria-label="Menu">☰</button>
+    <ul id="links">
+      <li><a href="#about" data-i18n="nAbout">Sobre mí</a></li>
+      <li><a href="#experience" data-i18n="nExp">Experiencia</a></li>
+      <li><a href="#projects" data-i18n="nProj">Proyectos</a></li>
+      <li><a href="#skills" data-i18n="nSkills">Tecnologías</a></li>
+      <li><a href="#contact" data-i18n="nContact">Contacto</a></li>
+      <li class="tools">
+        <button id="langBtn" aria-label="Idioma">EN</button>
+        <button id="themeBtn" aria-label="Tema">☀</button>
+      </li>
+    </ul>
+  </nav>
 
-<header id="top">
-  <p class="badge"><i></i><span data-i18n="avail">Disponible · trabajo remoto</span></p>
-  <h1>Luis Morales</h1>
-  <p class="role"><span id="typed"></span><b class="caret"></b></p>
-  <p class="lead" data-i18n="lead">Construyo aplicaciones empresariales con Angular y Spring Boot. Más de 2 años en producción en el sector salud, resolviendo bugs reales y acompañando a otros desarrolladores.</p>
-  <div class="buttons">
-    <a class="btn primary" href="#projects" data-i18n="viewProjects">Ver proyectos</a>
-    <a class="btn" href="./Files/Luis_Morales_CV.pdf" target="_blank" rel="noopener" data-i18n="downloadCV">Descargar CV</a>
-    <a class="btn" href="#contact" data-i18n="hire">Hablemos</a>
-  </div>
-  <div class="stats">
-    <div><strong data-count="2" data-suffix="+">0</strong><span data-i18n="s1">años en producción</span></div>
-    <div><strong data-count="3">0</strong><span data-i18n="s2">proyectos publicados</span></div>
-    <div><strong data-count="15" data-suffix="+">0</strong><span data-i18n="s3">tecnologías</span></div>
-    <div><strong>B2</strong><span data-i18n="s4">inglés</span></div>
-  </div>
-</header>
-
-<main>
-<section id="about">
-  <h2 data-i18n="aboutTitle">Sobre mí</h2>
-  <div class="two">
-    <p data-i18n="aboutText">Soy desarrollador Full Stack con más de 2 años en entornos de producción. Mi fuerte es el frontend con Angular y TypeScript, y construyo backends en Java y Spring Boot con arquitectura en capas (Controller, Service, DAO, DTOs y Mappers). Trabajo en equipos ágiles con Scrum y Kanban, y me importa escribir código limpio, aplicar SOLID y dejar todo probado con Postman antes de entregar.</p>
-    <div class="panel">
-      <h3 data-i18n="eduTitle">Formación</h3>
-      <p><b data-i18n="edu1">Ingeniería de Sistemas</b><br><small>UNAD · 2023 – <span data-i18n="now">actualidad</span></small></p>
-      <p><b data-i18n="edu2">Tecnólogo en Análisis y Desarrollo de Software</b><br><small>SENA · 2022 – 2024</small></p>
-      <p><b data-i18n="langs">Idiomas</b><br><small data-i18n="langsV">Español nativo · Inglés B2</small></p>
+  <header id="top">
+    <p class="badge"><i></i><span data-i18n="avail">Disponible · trabajo remoto</span></p>
+    <h1>Luis Morales</h1>
+    <p class="role"><span id="typed"></span><b class="caret"></b></p>
+    <p class="lead" data-i18n="lead">Construyo aplicaciones empresariales con Angular y Spring Boot. Más de 2 años en
+      producción en el sector salud, resolviendo bugs reales y acompañando a otros desarrolladores.</p>
+    <div class="buttons">
+      <a class="btn primary" href="#projects" data-i18n="viewProjects">Ver proyectos</a>
+      <a class="btn" href="./Files/Luis_Morales_CV.pdf" target="_blank" rel="noopener" data-i18n="downloadCV">Descargar
+        CV</a>
+      <a class="btn" href="#contact" data-i18n="hire">Hablemos</a>
     </div>
-  </div>
-</section>
-
-<section id="experience">
-  <h2 data-i18n="expTitle">Experiencia</h2>
-  <div class="timeline">
-    <article class="item">
-      <div class="head"><h3 data-i18n="j1t">Desarrollador Web</h3><time data-i18n="j1d">Oct 2024 – Jul 2026</time></div>
-      <h4>R-FAST SAS · <span data-i18n="j1c">Software médico · Híbrido</span></h4>
-      <ul>
-        <li data-i18n="j1a">Desarrollé funcionalidades full stack en aplicaciones médicas internas con Angular, TypeScript, Java y Spring Boot.</li>
-        <li data-i18n="j1b">Construí backends de extremo a extremo con arquitectura en capas, DTOs y Mappers.</li>
-        <li data-i18n="j1c2">Escribí consultas SQL en MySQL y generé reportes dinámicos con JasperSoft.</li>
-        <li data-i18n="j1d2">Validé servicios REST con Postman y resolví bugs en producción.</li>
-        <li data-i18n="j1e">Gestioné tareas y sprints en Azure DevOps y participé en las ceremonias Scrum.</li>
-        <li data-i18n="j1f">Acompañé a desarrolladores junior en tareas de frontend y backend.</li>
-      </ul>
-    </article>
-    <article class="item">
-      <div class="head"><h3 data-i18n="j2t">Aprendiz Full Stack (práctica profesional)</h3><time data-i18n="j2d">Abr 2024 – Oct 2024</time></div>
-      <h4>R-FAST SAS · SENA</h4>
-      <ul>
-        <li data-i18n="j2a">Apoyé el desarrollo y despliegue de módulos con Angular, Java y Spring Boot bajo Scrum y Kanban.</li>
-        <li data-i18n="j2b">Fui jurado evaluador en SENASoft 2024, en representación de la empresa.</li>
-        <li data-i18n="j2c">Reconocido como aprendiz destacado por el SENA, con participación en semilleros de investigación.</li>
-      </ul>
-    </article>
-  </div>
-</section>
-
-<section id="projects">
-  <h2 data-i18n="projTitle">Proyectos</h2>
-  <div class="filters">
-    <button class="on" data-f="all" data-i18n="fAll">Todos</button>
-    <button data-f="react">React</button>
-    <button data-f="node">Node.js</button>
-    <button data-f="go">Go</button>
-  </div>
-  <div class="grid">
-    <article class="card" data-tags="go">
-      <h3 data-i18n="p1t">Reto E-Commerce</h3>
-      <p data-i18n="p1d">E-commerce full stack hecho en 7 días en el reto tryCatch: catálogo, carrito y CRUD de productos y usuarios. Backend en Go (Gin) con PostgreSQL.</p>
-      <code>HTML · CSS · JavaScript · Go · PostgreSQL</code>
-      <a href="https://github.com/Luiis24/HagaseUnEcommerce" target="_blank" rel="noopener">GitHub</a>
-    </article>
-    <article class="card" data-tags="react node">
-      <h3 data-i18n="p3t">SGMI: mantenimiento industrial</h3>
-      <p data-i18n="p3d">Plataforma de escritorio para registrar maquinaria, componentes y procesos de mantenimiento. Nació del semillero de investigación del SENA.</p>
-      <code>React · Electron · Node.js · PostgreSQL</code>
-      <a href="https://github.com/Luiis24/Sistema-Para-La-Gestion-De-Mantenimiento" target="_blank" rel="noopener">GitHub</a>
-    </article>
-    <article class="card" data-tags="react node">
-      <h3>Bike Store</h3>
-      <p data-i18n="p2d">Tienda de bicicletas con autenticación, catálogo, carrito y simulación de compra. React en el frontend y Node.js con PostgreSQL en el backend.</p>
-      <code>React · Node.js · PostgreSQL</code>
-      <a href="https://github.com/Luiis24/Proyectos_Y_Trabajos/tree/Bike-Store" target="_blank" rel="noopener">GitHub</a>
-    </article>
-  </div>
-</section>
-
-<section id="skills">
-  <h2 data-i18n="skTitle">Tecnologías</h2>
-  <div class="skgrid">
-    <div><h3>Frontend</h3><ul><li>Angular 17</li><li>React</li><li>TypeScript</li><li>JavaScript</li><li>HTML5 / CSS3</li><li>Bootstrap</li><li>Tailwind CSS</li></ul></div>
-    <div><h3>Backend</h3><ul><li>Java</li><li>Spring Boot</li><li>REST APIs</li><li>DTOs / Mappers</li><li>Node.js</li><li>Express</li></ul></div>
-    <div><h3 data-i18n="skDb">Datos y reportes</h3><ul><li>MySQL</li><li>PostgreSQL</li><li>DBeaver</li><li>JasperSoft</li></ul></div>
-    <div><h3 data-i18n="skTools">Herramientas y método</h3><ul><li>Git / GitHub</li><li>Azure DevOps</li><li>Postman</li><li>Swagger</li><li>Scrum / Kanban</li><li>Clean Code / SOLID</li></ul></div>
-  </div>
-</section>
-
-<section id="contact">
-  <h2 data-i18n="cTitle">Contacto</h2>
-  <p class="lead" data-i18n="cLead">Busco un rol remoto de frontend o full stack. Escríbeme y respondo rápido.</p>
-  <div class="two">
-    <div class="panel">
-      <a class="clink" href="mailto:nandoarmo01@gmail.com">nandoarmo01@gmail.com</a>
-      <a class="clink" href="https://wa.me/573104063402" target="_blank" rel="noopener">WhatsApp · +57 310 406 3402</a>
-      <a class="clink" href="https://github.com/Luiis24" target="_blank" rel="noopener">github.com/Luiis24</a>
-      <p><small data-i18n="cLoc">Cali, Colombia · trabajo remoto</small></p>
+    <div class="stats">
+      <div><strong data-count="2" data-suffix="+">0</strong><span data-i18n="s1">años en producción</span></div>
+      <div><strong data-count="3">0</strong><span data-i18n="s2">proyectos publicados</span></div>
+      <div><strong data-count="15" data-suffix="+">0</strong><span data-i18n="s3">tecnologías</span></div>
+      <div><strong>B2</strong><span data-i18n="s4">inglés</span></div>
     </div>
-    <form id="form">
-      <input id="fn" required data-ph="nameP" placeholder="Tu nombre">
-      <input id="fe" type="email" required data-ph="mailP" placeholder="Tu correo">
-      <textarea id="fm" rows="4" required data-ph="msgP" placeholder="Cuéntame qué necesitas"></textarea>
-      <button class="btn primary" type="submit" data-i18n="send">Enviar mensaje</button>
-      <p id="note" role="status"></p>
-    </form>
-  </div>
-</section>
-</main>
+  </header>
 
-<footer><p>© 2026 Luis Morales</p><a href="#top" data-i18n="top">Volver arriba</a></footer>
-<script src="script.js"></script>
+  <main>
+    <section id="about">
+      <h2 data-i18n="aboutTitle">Sobre mí</h2>
+      <div class="two">
+        <p data-i18n="aboutText">Soy desarrollador Full Stack con más de 2 años en entornos de producción. Mi fuerte es
+          el frontend con Angular y TypeScript, y construyo backends en Java y Spring Boot con arquitectura en capas
+          (Controller, Service, DAO, DTOs y Mappers). Trabajo en equipos ágiles con Scrum y Kanban, y me importa
+          escribir código limpio, aplicar SOLID y dejar todo probado con Postman antes de entregar.</p>
+        <div class="panel">
+          <h3 data-i18n="eduTitle">Formación</h3>
+          <p><b data-i18n="edu1">Ingeniería de Sistemas</b><br><small>UNAD · 2023 – <span
+                data-i18n="now">actualidad</span></small></p>
+          <p><b data-i18n="edu2">Tecnólogo en Análisis y Desarrollo de Software</b><br><small>SENA · 2022 – 2024</small>
+          </p>
+          <p><b data-i18n="langs">Idiomas</b><br><small data-i18n="langsV">Español nativo · Inglés B2</small></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2 data-i18n="expTitle">Experiencia</h2>
+      <div class="timeline">
+        <article class="item">
+          <div class="head">
+            <h3 data-i18n="j1t">Desarrollador Web</h3><time data-i18n="j1d">Oct 2024 – Jul 2026</time>
+          </div>
+          <h4>R-FAST SAS · <span data-i18n="j1c">Software médico · Híbrido</span></h4>
+          <ul>
+            <li data-i18n="j1a">Desarrollé funcionalidades full stack en aplicaciones médicas internas con Angular,
+              TypeScript, Java y Spring Boot.</li>
+            <li data-i18n="j1b">Construí backends de extremo a extremo con arquitectura en capas, DTOs y Mappers.</li>
+            <li data-i18n="j1c2">Escribí consultas SQL en MySQL y generé reportes dinámicos con JasperSoft.</li>
+            <li data-i18n="j1d2">Validé servicios REST con Postman y resolví bugs en producción.</li>
+            <li data-i18n="j1e">Gestioné tareas y sprints en Azure DevOps y participé en las ceremonias Scrum.</li>
+            <li data-i18n="j1f">Acompañé a desarrolladores junior en tareas de frontend y backend.</li>
+          </ul>
+        </article>
+        <article class="item">
+          <div class="head">
+            <h3 data-i18n="j2t">Aprendiz Full Stack (práctica profesional)</h3><time data-i18n="j2d">Abr 2024 – Oct
+              2024</time>
+          </div>
+          <h4>R-FAST SAS · SENA</h4>
+          <ul>
+            <li data-i18n="j2a">Apoyé el desarrollo y despliegue de módulos con Angular, Java y Spring Boot bajo Scrum y
+              Kanban.</li>
+            <li data-i18n="j2b">Fui jurado evaluador en SENASoft 2024, en representación de la empresa.</li>
+            <li data-i18n="j2c">Reconocido como aprendiz destacado por el SENA, con participación en semilleros de
+              investigación.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 data-i18n="projTitle">Proyectos</h2>
+      <div class="filters">
+        <button class="on" data-f="all" data-i18n="fAll">Todos</button>
+        <button data-f="react">React</button>
+        <button data-f="node">Node.js</button>
+        <button data-f="go">Go</button>
+      </div>
+      <div class="grid">
+        <article class="card" data-tags="go">
+          <h3 data-i18n="p1t">Reto E-Commerce</h3>
+          <p data-i18n="p1d">E-commerce full stack hecho en 7 días en el reto tryCatch: catálogo, carrito y CRUD de
+            productos y usuarios. Backend en Go (Gin) con PostgreSQL.</p>
+          <code>HTML · CSS · JavaScript · Go · PostgreSQL</code>
+          <a href="https://github.com/Luiis24/HagaseUnEcommerce" target="_blank" rel="noopener">GitHub</a>
+        </article>
+        <article class="card" data-tags="react node">
+          <h3 data-i18n="p3t">SGMI: mantenimiento industrial</h3>
+          <p data-i18n="p3d">Plataforma de escritorio para registrar maquinaria, componentes y procesos de
+            mantenimiento. Nació del semillero de investigación del SENA.</p>
+          <code>React · Electron · Node.js · PostgreSQL</code>
+          <a href="https://github.com/Luiis24/Sistema-Para-La-Gestion-De-Mantenimiento" target="_blank"
+            rel="noopener">GitHub</a>
+        </article>
+        <article class="card" data-tags="react node">
+          <h3>Bike Store</h3>
+          <p data-i18n="p2d">Tienda de bicicletas con autenticación, catálogo, carrito y simulación de compra. React en
+            el frontend y Node.js con PostgreSQL en el backend.</p>
+          <code>React · Node.js · PostgreSQL</code>
+          <a href="https://github.com/Luiis24/Proyectos_Y_Trabajos/tree/Bike-Store" target="_blank"
+            rel="noopener">GitHub</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 data-i18n="skTitle">Tecnologías</h2>
+      <div class="skgrid">
+        <div>
+          <h3>Frontend</h3>
+          <ul>
+            <li>Angular 17</li>
+            <li>React</li>
+            <li>TypeScript</li>
+            <li>JavaScript</li>
+            <li>HTML5 / CSS3</li>
+            <li>Bootstrap</li>
+            <li>Tailwind CSS</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Backend</h3>
+          <ul>
+            <li>Java</li>
+            <li>Spring Boot</li>
+            <li>REST APIs</li>
+            <li>DTOs / Mappers</li>
+            <li>Node.js</li>
+            <li>Express</li>
+          </ul>
+        </div>
+        <div>
+          <h3 data-i18n="skDb">Datos y reportes</h3>
+          <ul>
+            <li>MySQL</li>
+            <li>PostgreSQL</li>
+            <li>DBeaver</li>
+            <li>JasperSoft</li>
+          </ul>
+        </div>
+        <div>
+          <h3 data-i18n="skTools">Herramientas y método</h3>
+          <ul>
+            <li>Git / GitHub</li>
+            <li>Azure DevOps</li>
+            <li>Postman</li>
+            <li>Swagger</li>
+            <li>Scrum / Kanban</li>
+            <li>Clean Code / SOLID</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 data-i18n="cTitle">Contacto</h2>
+      <p class="lead" data-i18n="cLead">Busco un rol remoto de frontend o full stack. Escríbeme y respondo rápido.</p>
+      <div class="two">
+        <div class="panel">
+          <a class="clink" href="mailto:nandoarmo01@gmail.com">nandoarmo01@gmail.com</a>
+          <a class="clink" href="https://wa.me/573104063402" target="_blank" rel="noopener">WhatsApp · +57 310 406
+            3402</a>
+          <a class="clink" href="https://github.com/Luiis24" target="_blank" rel="noopener">github.com/Luiis24</a>
+          <p><small data-i18n="cLoc">Cali, Colombia · trabajo remoto</small></p>
+        </div>
+        <form id="form">
+          <input id="fn" required data-ph="nameP" placeholder="Tu nombre">
+          <input id="fe" type="email" required data-ph="mailP" placeholder="Tu correo">
+          <textarea id="fm" rows="4" required data-ph="msgP" placeholder="Cuéntame qué necesitas"></textarea>
+          <button class="btn primary" type="submit" data-i18n="send">Enviar mensaje</button>
+          <p id="note" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Luis Morales</p><a href="#top" data-i18n="top">Volver arriba</a>
+  </footer>
+  <script src="script.js"></script>
 </body>
+
 </html>
