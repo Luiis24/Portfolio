@@ -46,8 +46,8 @@
     </div>
     <div class="stats">
       <div><strong data-count="2" data-suffix="+">0</strong><span data-i18n="s1">años en producción</span></div>
-      <div><strong data-count="3">0</strong><span data-i18n="s2">proyectos publicados</span></div>
-      <div><strong data-count="15" data-suffix="+">0</strong><span data-i18n="s3">tecnologías</span></div>
+      <div><strong data-count="9">0</strong><span data-i18n="s2">proyectos publicados</span></div>
+      <div><strong data-count="30" data-suffix="+">0</strong><span data-i18n="s3">tecnologías</span></div>
       <div><strong>B2</strong><span data-i18n="s4">inglés</span></div>
     </div>
   </header>
@@ -108,52 +108,29 @@
 
     <section id="projects">
       <h2 data-i18n="projTitle">Proyectos</h2>
-      <div class="filters">
-        <button class="on" data-f="all" data-i18n="fAll">Todos</button>
-        <button data-f="react">React</button>
-        <button data-f="node">Node.js</button>
-        <button data-f="go">Go</button>
-      </div>
-      <div class="grid">
-        <article class="card" data-tags="go">
-          <h3 data-i18n="p1t">Reto E-Commerce</h3>
-          <p data-i18n="p1d">E-commerce full stack hecho en 7 días en el reto tryCatch: catálogo, carrito y CRUD de
-            productos y usuarios. Backend en Go (Gin) con PostgreSQL.</p>
-          <code>HTML · CSS · JavaScript · Go · PostgreSQL</code>
-          <a href="https://github.com/Luiis24/HagaseUnEcommerce" target="_blank" rel="noopener">GitHub</a>
-        </article>
-        <article class="card" data-tags="react node">
-          <h3 data-i18n="p3t">SGMI: mantenimiento industrial</h3>
-          <p data-i18n="p3d">Plataforma de escritorio para registrar maquinaria, componentes y procesos de
-            mantenimiento. Nació del semillero de investigación del SENA.</p>
-          <code>React · Electron · Node.js · PostgreSQL</code>
-          <a href="https://github.com/Luiis24/Sistema-Para-La-Gestion-De-Mantenimiento" target="_blank"
-            rel="noopener">GitHub</a>
-        </article>
-        <article class="card" data-tags="react node">
-          <h3>Bike Store</h3>
-          <p data-i18n="p2d">Tienda de bicicletas con autenticación, catálogo, carrito y simulación de compra. React en
-            el frontend y Node.js con PostgreSQL en el backend.</p>
-          <code>React · Node.js · PostgreSQL</code>
-          <a href="https://github.com/Luiis24/Proyectos_Y_Trabajos/tree/Bike-Store" target="_blank"
-            rel="noopener">GitHub</a>
-        </article>
-      </div>
+      <p class="proj-lead" data-i18n="projLead">Proyectos personales, retos y pruebas técnicas. Filtra por tecnología o abre las demos desplegadas sin salir del portafolio.</p>
+      <div class="filters" id="filters" role="group" aria-label="Filtros"></div>
+      <div class="grid" id="projGrid"></div>
     </section>
 
     <section id="skills">
       <h2 data-i18n="skTitle">Tecnologías</h2>
+      <p class="proj-lead" data-i18n="skLead">Toca una tecnología para ver los proyectos donde la uso.</p>
       <div class="skgrid">
         <div>
           <h3>Frontend</h3>
           <ul>
-            <li>Angular 17</li>
-            <li>React</li>
+            <li data-t="angular">Angular 14–17</li>
+            <li data-t="react">React</li>
             <li>TypeScript</li>
-            <li>JavaScript</li>
+            <li data-t="js">JavaScript</li>
             <li>HTML5 / CSS3</li>
+            <li>SASS / SCSS</li>
             <li>Bootstrap</li>
             <li>Tailwind CSS</li>
+            <li data-t="react">Vite</li>
+            <li data-t="react">Module Federation</li>
+            <li data-t="react">Recharts</li>
           </ul>
         </div>
         <div>
@@ -163,15 +140,22 @@
             <li>Spring Boot</li>
             <li>REST APIs</li>
             <li>DTOs / Mappers</li>
-            <li>Node.js</li>
-            <li>Express</li>
+            <li data-t="node">Node.js</li>
+            <li data-t="node">Express</li>
+            <li data-t="go">Go (Gin)</li>
+            <li data-t="dotnet">ASP.NET Core 8</li>
+            <li data-t="dotnet">Entity Framework Core</li>
+            <li data-t="php">Laravel 11 / PHP</li>
+            <li data-t="php">JWT</li>
           </ul>
         </div>
         <div>
           <h3 data-i18n="skDb">Datos y reportes</h3>
           <ul>
             <li>MySQL</li>
-            <li>PostgreSQL</li>
+            <li data-t="sql">PostgreSQL</li>
+            <li data-t="sql">SQLite</li>
+            <li>SQL Server</li>
             <li>DBeaver</li>
             <li>JasperSoft</li>
           </ul>
@@ -183,6 +167,10 @@
             <li>Azure DevOps</li>
             <li>Postman</li>
             <li>Swagger</li>
+            <li data-t="docker">Docker</li>
+            <li data-t="live">Render / Netlify</li>
+            <li data-t="php">PHPUnit</li>
+            <li data-t="react">Electron</li>
             <li>Scrum / Kanban</li>
             <li>Clean Code / SOLID</li>
           </ul>
@@ -215,7 +203,20 @@
   <footer>
     <p>© 2026 Luis Morales</p><a href="#top" data-i18n="top">Volver arriba</a>
   </footer>
-  <script src="script.js"></script>
+    <dialog id="demoModal" aria-labelledby="demoTitle">
+    <div class="demo-bar">
+      <strong id="demoTitle"></strong>
+      <span class="demo-actions">
+        <a id="demoOpen" class="btn-sm" target="_blank" rel="noopener" data-i18n="openNew">Abrir en pestaña nueva ↗</a>
+        <button id="demoClose" class="btn-sm" type="button" aria-label="Cerrar">✕</button>
+      </span>
+    </div>
+    <p id="demoNote" class="demo-note" data-i18n="demoNote">Cargando demo… Si el servicio está en un plan gratuito puede tardar unos segundos en despertar. Si no se muestra, ábrela en una pestaña nueva.</p>
+    <iframe id="demoFrame" title="Demo" loading="lazy" referrerpolicy="no-referrer"
+      sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals"></iframe>
+  </dialog>
+
+<script src="script.js"></script>
 </body>
 
 </html>
