@@ -20,58 +20,23 @@ Mi principal experiencia se centra en el diseño de arquitecturas escalables par
 
 ---
 
-# 📦 Proyectos Destacados
+# 📦 Proyectos
 
-## 🏥 SGMI — Sistema de Gestión de Mantenimiento Industrial
+Los proyectos se definen en el arreglo `PROJECTS` de `script.js` (ES/EN). Para publicar una demo basta con poner su URL en el campo `demo`: la tarjeta pasa a "Desplegado" y aparece el botón **Ver demo**, que la abre en un visor dentro del portafolio.
 
-Plataforma empresarial para la gestión del mantenimiento industrial, diseñada para controlar maquinaria, administrar componentes internos y optimizar la planificación de los procesos de mantenimiento.
+| Proyecto | Stack | Demo |
+|---|---|---|
+| **MediCore** · gestión clínica | ASP.NET Core 8 MVC, EF Core, SQLite, Bootstrap 5, Docker | ✅ Render |
+| **Caja Rápida** · POS e inventario | HTML, CSS, JavaScript | ✅ Netlify |
+| **NovaBank** · micro frontends | React, TypeScript, Vite, Module Federation | — |
+| **Dashboard IoT** · tiempo real | React 18, Vite, Recharts | — |
+| **Vacation** · planificador de viajes | Laravel 11, PHP 8.2, PostgreSQL, Angular 16, PHPUnit | — |
+| **SGMI** · mantenimiento industrial | React, Electron, Node.js, PostgreSQL, Swagger | — |
+| **Reto E-Commerce tryCatch** (5.º lugar) | Go (Gin), PostgreSQL, JavaScript | — |
+| **Gestión de pólizas** · prueba técnica | Node.js, Express, SQLite, JavaScript | — |
+| **Bike Store** | React, Vite, Node.js, PostgreSQL | — |
 
-**Mis principales aportes:**
-
-- Diseño de interfaces responsivas.
-- Gestión de flujos de datos relacionales.
-- Optimización del manejo de estado para integración con aplicaciones de escritorio.
-
-**Tecnologías utilizadas:**
-
-- React
-- Electron
-- Node.js
-- PostgreSQL
-
----
-
-## 🛒 E-Commerce Challenge
-
-Aplicación de comercio electrónico Full Stack desarrollada durante el **reto tryCatch**, cuyo objetivo era diseñar e implementar una tienda completamente funcional en un plazo de **7 días**.
-
-**Características principales:**
-
-- Catálogo de productos.
-- Carrito de compras en tiempo real.
-- Operaciones CRUD completas para usuarios y productos.
-
-**Tecnologías utilizadas:**
-
-- Go (Framework Gin)
-- JavaScript
-- PostgreSQL
-- HTML5
-- CSS3
-
----
-
-## 🚲 Tienda de Bicicletas
-
-Aplicación Full Stack para una tienda de bicicletas que incluye autenticación segura de usuarios, catálogo interactivo de productos, filtros avanzados de búsqueda y simulación del proceso de compra.
-
-**Tecnologías utilizadas:**
-
-- React
-- Node.js
-- PostgreSQL
-
----
+Cada tecnología de la sección *Tecnologías* es clicable y filtra los proyectos donde se usa.
 
 > **Nota:** Mis desarrollos empresariales más recientes con **Angular** y **Spring Boot** en el sector salud están protegidos por acuerdos de confidencialidad (NDA). Sin embargo, los principios de arquitectura y las buenas prácticas aplicadas en esos proyectos se reflejan en la calidad del código presente en este portafolio.
 
@@ -124,4 +89,5 @@ Aplicación Full Stack para una tienda de bicicletas que incluye autenticación 
 - 📱 **Diseño Responsivo:** Optimizado para dispositivos móviles, tabletas y escritorio.
 - 🌐 **Soporte Bilingüe:** Disponible completamente en español e inglés.
 - 🏗️ **Arquitectura Limpia:** Desarrollado siguiendo una arquitectura basada en componentes y buenas prácticas de Clean Code.
+- 🔎 **Filtros por tecnología y visor de demos** integrado.
 - 📄 **Integración de CV:** Enlace directo para descargar mi hoja de vida actualizada.

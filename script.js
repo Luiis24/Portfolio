@@ -19,10 +19,11 @@ const EN = {
   j2a: "Supported development and deployment of modules with Angular, Java and Spring Boot under Scrum and Kanban.",
   j2b: "Served as evaluating judge at SENASoft 2024, representing the company.",
   j2c: "Recognized by SENA as an outstanding apprentice, with participation in research groups.",
-  projTitle: "Projects", fAll: "All",
-  p1t: "E-Commerce Challenge", p1d: "Full stack e-commerce built in 7 days in the tryCatch challenge: catalog, cart and CRUD for products and users. Go (Gin) backend with PostgreSQL.",
-  p3t: "SGMI: industrial maintenance", p3d: "Desktop platform to track machinery, components and maintenance processes. Born from the SENA research group.",
-  p2d: "Bike store with authentication, catalog, cart and checkout simulation. React frontend and Node.js backend with PostgreSQL.",
+  projTitle: "Projects",
+  projLead: "Personal projects, challenges and technical tests. Filter by technology or open the deployed demos without leaving the portfolio.",
+  openNew: "Open in new tab ↗",
+  demoNote: "Loading demo… If the service is on a free plan it may take a few seconds to wake up. If it does not show, open it in a new tab.",
+  skLead: "Tap a technology to see the projects where I use it.",
   skTitle: "Skills", skDb: "Data and reports", skTools: "Tools and methods",
   cTitle: "Contact", cLead: "I'm looking for a remote frontend or full stack role. Write to me and I'll reply quickly.",
   cLoc: "Cali, Colombia · remote work", send: "Send message", top: "Back to top",
@@ -47,6 +48,7 @@ function setLang(l) {
   document.documentElement.lang = l;
   $("#langBtn").textContent = l === "es" ? "EN" : "ES";
   store("lang", l); startTyping();
+  if (typeof renderFilters === "function") { renderFilters(); renderProjects(); }
 }
 $("#langBtn").onclick = () => setLang(lang === "es" ? "en" : "es");
 
@@ -121,11 +123,158 @@ const cio = new IntersectionObserver(es => es.forEach(en => {
 }), { threshold: .6 });
 $$("[data-count]").forEach(e => cio.observe(e));
 
-// Project filters
-$$(".filters button").forEach(b => b.onclick = () => {
-  $$(".filters button").forEach(x => x.classList.toggle("on", x === b));
-  $$(".card").forEach(c => c.classList.toggle("hide", b.dataset.f !== "all" && !c.dataset.tags.split(" ").includes(b.dataset.f)));
+
+// ---------- Projects (data-driven) ----------
+const GH = "https://github.com/Luiis24/";
+const UI = {
+  es: { all: "Todos", live: "Desplegados", demo: "Ver demo", code: "Código", deployed: "Desplegado", codeOnly: "Solo código", github: "GitHub", api: "API", none: "Ningún proyecto con este filtro." },
+  en: { all: "All", live: "Deployed", demo: "Live demo", code: "Code", deployed: "Deployed", codeOnly: "Code only", github: "GitHub", api: "API", none: "No projects match this filter." }
+};
+// keys de filtro: live (tiene demo), react, angular, node, go, dotnet, php, docker, sql, js
+const FILTERS = [["live", null], ["react", "React"], ["angular", "Angular"], ["node", "Node.js"], ["go", "Go"], ["dotnet", ".NET"], ["php", "PHP / Laravel"], ["docker", "Docker"], ["sql", "SQL"], ["js", "JavaScript"]];
+// Para publicar una demo, pon su URL en "demo".
+const PROJECTS = [
+  {
+    repo: "MediCore", demo: "https://medicore-304b.onrender.com/",
+    t: { es: "MediCore: gestión clínica", en: "MediCore: clinic management" },
+    d: {
+      es: "Pacientes, citas e historias clínicas con dashboard de métricas en tiempo real, API REST en JSON, búsqueda, modo oscuro y despliegue con Docker en Render.",
+      en: "Patients, appointments and medical records with a real-time metrics dashboard, JSON REST API, search, dark mode and Docker deployment on Render."
+    },
+    tech: ["ASP.NET Core 8 MVC", "Entity Framework Core", "SQLite", "Bootstrap 5", "Docker"], keys: ["dotnet", "docker", "sql"]
+  },
+  {
+    repo: "CajaRapida-StockSimulator", demo: "https://cajastocksimulator.netlify.app/",
+    t: { es: "Caja Rápida: POS e inventario", en: "Caja Rápida: POS and inventory" },
+    d: {
+      es: "Mini punto de venta para un negocio de seguridad electrónica: carrito con IVA, stock que baja al facturar, alertas de agotados y factura imprimible en formato tirilla. Sin dependencias.",
+      en: "Mini point of sale for a security-equipment shop: cart with VAT, stock that drops on checkout, out-of-stock alerts and a printable receipt. Zero dependencies."
+    },
+    tech: ["HTML5", "CSS3", "JavaScript", "localStorage"], keys: ["js"]
+  },
+  {
+    repo: "NovaBank", demo: "",
+    t: { es: "NovaBank: micro frontends", en: "NovaBank: micro frontends" },
+    d: {
+      es: "Portal bancario ficticio: un shell carga en tiempo de ejecución un simulador de crédito y un cotizador de seguros con Module Federation. Cada pieza también se compila como widget autónomo configurable con atributos data-*.",
+      en: "Fictional banking portal: a shell loads a credit simulator and an insurance quoter at runtime with Module Federation. Each piece also builds as a standalone widget configured via data-* attributes."
+    },
+    tech: ["React", "TypeScript", "Vite", "Module Federation"], keys: ["react"]
+  },
+  {
+    repo: "iot-dashboard", demo: "",
+    t: { es: "Dashboard IoT en tiempo real", en: "Real-time IoT dashboard" },
+    d: {
+      es: "Monitoreo de temperatura y humedad con nodos ESP32 simulados: lecturas cada 500 ms, historial navegable, niveles aceptables editables, alertas, y comandos de apagado y reinicio. Incluye diseño documentado hacia AWS IoT.",
+      en: "Temperature and humidity monitoring with simulated ESP32 nodes: readings every 500 ms, browsable history, editable thresholds, alerts, and power and restart commands. Includes a documented path to AWS IoT."
+    },
+    tech: ["React 18", "Vite", "Recharts", "JavaScript"], keys: ["react", "js"]
+  },
+  {
+    repo: "vacation-infodec", demo: "",
+    t: { es: "Vacation: planificador de viajes", en: "Vacation: trip planner" },
+    d: {
+      es: "Prueba técnica fullstack de Infodec: consulta el clima y convierte un presupuesto en COP a la moneda del destino, con historial por usuario, autenticación con tokens, pruebas unitarias e interfaz en español y alemán.",
+      en: "Infodec fullstack technical test: checks the weather and converts a COP budget into the destination currency, with per-user history, token authentication, unit tests and a Spanish/German interface."
+    },
+    tech: ["Laravel 11", "PHP 8.2", "PostgreSQL", "Angular 16", "Bootstrap 5", "PHPUnit"], keys: ["php", "angular", "sql"]
+  },
+  {
+    repo: "Sistema-Para-La-Gestion-De-Mantenimiento", demo: "",
+    extra: [{ label: "api", href: GH + "Api-SGMI-Render-" }],
+    t: { es: "SGMI: mantenimiento industrial", en: "SGMI: industrial maintenance" },
+    d: {
+      es: "Plataforma de escritorio para registrar maquinaria y componentes y gestionar mantenimiento preventivo y correctivo, con instructores y aprendices. Nació del semillero de investigación del SENA y tiene una API REST documentada con Swagger.",
+      en: "Desktop platform to track machinery and components and manage preventive and corrective maintenance, with instructors and apprentices. Born from the SENA research group, with a REST API documented in Swagger."
+    },
+    tech: ["React", "Electron", "Node.js", "PostgreSQL", "Swagger"], keys: ["react", "node", "sql"]
+  },
+  {
+    repo: "HagaseUnEcommerce", demo: "",
+    t: { es: "Reto E-Commerce tryCatch", en: "tryCatch E-Commerce Challenge" },
+    d: {
+      es: "E-commerce full stack hecho en 7 días: catálogo, carrito y CRUD de productos y usuarios. Backend en Go (Gin) con PostgreSQL. Quedó en 5.º lugar del reto.",
+      en: "Full stack e-commerce built in 7 days: catalog, cart and CRUD for products and users. Go (Gin) backend with PostgreSQL. Placed 5th in the challenge."
+    },
+    tech: ["HTML", "CSS", "JavaScript", "Go (Gin)", "PostgreSQL"], keys: ["go", "js", "sql"]
+  },
+  {
+    repo: "Prueba-tecnica-agente-motor", demo: "",
+    t: { es: "Gestión de pólizas (prueba técnica)", en: "Policy management (technical test)" },
+    d: {
+      es: "API REST en Node.js y Express con SQLite y frontend en JavaScript puro: filtros, búsqueda, modal y validaciones en ambos lados. El README documenta decisiones, alcance y qué faltaría para producción.",
+      en: "Node.js and Express REST API with SQLite and a vanilla JavaScript frontend: filters, search, modal and validation on both sides. The README documents decisions, scope and what is missing for production."
+    },
+    tech: ["Node.js", "Express", "SQLite", "JavaScript", "Postman"], keys: ["node", "js", "sql"]
+  },
+  {
+    repo: "Bike-Store", demo: "",
+    t: { es: "Bike Store", en: "Bike Store" },
+    d: {
+      es: "Tienda de bicicletas con autenticación (contraseñas cifradas con bcrypt), catálogo, carrito y simulación de compra. React + Vite en el frontend y Node.js con PostgreSQL en el backend.",
+      en: "Bike store with authentication (bcrypt-hashed passwords), catalog, cart and checkout simulation. React + Vite frontend and Node.js with PostgreSQL backend."
+    },
+    tech: ["React", "Vite", "Node.js", "PostgreSQL", "bcrypt"], keys: ["react", "node", "sql"]
+  }
+];
+
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+let filter = "all";
+
+function renderFilters() {
+  const u = UI[lang];
+  const btn = (k, label) => `<button type="button" data-f="${k}" class="${filter === k ? "on" : ""}">${esc(label)}</button>`;
+  $("#filters").innerHTML = btn("all", u.all) + FILTERS.map(([k, l]) => btn(k, k === "live" ? u.live : l)).join("");
+  $$("#filters button").forEach(b => b.onclick = () => setFilter(b.dataset.f));
+}
+
+function renderProjects() {
+  const u = UI[lang];
+  const list = PROJECTS.filter(p => filter === "all" || (filter === "live" ? !!p.demo : p.keys.includes(filter)));
+  $("#projGrid").innerHTML = list.length ? list.map(p => `
+    <article class="card">
+      <div class="card-top">
+        <h3>${esc(p.t[lang])}</h3>
+        <span class="status ${p.demo ? "live" : ""}">${p.demo ? u.deployed : u.codeOnly}</span>
+      </div>
+      <p>${esc(p.d[lang])}</p>
+      <ul class="tech">${p.tech.map(t => `<li>${esc(t)}</li>`).join("")}</ul>
+      <div class="actions">
+        ${p.demo ? `<button type="button" class="act primary" data-demo="${esc(p.demo)}" data-title="${esc(p.t[lang])}">▶ ${u.demo}</button>` : ""}
+        <a class="act" href="${GH + p.repo}" target="_blank" rel="noopener">${u.github}</a>
+        ${(p.extra || []).map(x => `<a class="act" href="${x.href}" target="_blank" rel="noopener">${u[x.label] || x.label}</a>`).join("")}
+      </div>
+    </article>`).join("") : `<p class="empty">${u.none}</p>`;
+  $$("[data-demo]").forEach(b => b.onclick = () => openDemo(b.dataset.demo, b.dataset.title));
+}
+
+function setFilter(k) {
+  filter = filter === k && k !== "all" ? "all" : k;
+  renderFilters(); renderProjects();
+  syncSkills();
+}
+
+// Skills -> filtran proyectos
+function syncSkills() { $$(".skgrid li[data-t]").forEach(li => li.classList.toggle("on", li.dataset.t === filter)); }
+$$(".skgrid li[data-t]").forEach(li => {
+  li.tabIndex = 0; li.setAttribute("role", "button");
+  const go = () => { setFilter(li.dataset.t); glide($("#projects").getBoundingClientRect().top + scrollY - 70); };
+  li.onclick = go;
+  li.onkeydown = e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } };
 });
+
+// Demo viewer
+const modal = $("#demoModal"), frame = $("#demoFrame");
+function openDemo(url, title) {
+  $("#demoTitle").textContent = title;
+  $("#demoOpen").href = url;
+  frame.src = url;
+  modal.showModal();
+}
+function closeDemo() { modal.close(); frame.src = "about:blank"; }
+$("#demoClose").onclick = closeDemo;
+modal.addEventListener("click", e => { if (e.target === modal) closeDemo(); });
+modal.addEventListener("close", () => { frame.src = "about:blank"; });
 
 // Contact form: opens the visitor's email app, no backend needed
 $("#form").onsubmit = e => {

@@ -358,6 +358,11 @@ h4 {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
 }
+.proj-lead {
+  color: var(--mut);
+  max-width: 62ch;
+  margin: -6px 0 20px;
+}
 .card {
   display: flex;
   flex-direction: column;
@@ -371,28 +376,137 @@ h4 {
   transform: translateY(-5px);
   border-color: var(--ac);
 }
-.card.hide {
-  display: none;
+.card-top {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  gap: 8px;
 }
 .card h3 {
   font:
     600 20px "Space Grotesk",
     sans-serif;
 }
+.status {
+  flex: none;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 99px;
+  border: 1px solid var(--line);
+  color: var(--mut);
+  white-space: nowrap;
+}
+.status.live {
+  color: #19b37a;
+  border-color: #19b37a;
+}
 .card p {
   color: var(--mut);
   font-size: 15px;
   flex: 1;
 }
-.card code {
-  color: var(--ac);
-  font-size: 13px;
+.tech {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
 }
-.card a {
-  align-self: flex-start;
-  font-weight: 600;
+.tech li {
+  color: var(--ac);
+  font-size: 12.5px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 1px 8px;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+.card .act,
+.btn-sm {
+  font:
+    600 14px Inter,
+    sans-serif;
   text-decoration: none;
-  border-bottom: 2px solid var(--ac);
+  color: var(--tx);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 6px 14px;
+  cursor: pointer;
+  align-self: auto;
+  transition: 0.2s;
+}
+.card .act:hover,
+.btn-sm:hover {
+  border-color: var(--ac);
+  color: var(--ac);
+}
+.card .act.primary {
+  background: var(--ac);
+  color: var(--acx);
+  border-color: var(--ac);
+}
+.card .act.primary:hover {
+  opacity: 0.85;
+  color: var(--acx);
+}
+.empty {
+  color: var(--mut);
+}
+.skgrid li[data-t] {
+  cursor: pointer;
+}
+.skgrid li[data-t]:hover,
+.skgrid li[data-t]:focus-visible,
+.skgrid li.on {
+  border-color: var(--ac);
+  color: var(--ac);
+  outline: none;
+}
+#demoModal {
+  width: min(1100px, 94vw);
+  height: min(780px, 90vh);
+  margin: auto;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--bg2);
+  color: var(--tx);
+  overflow: hidden;
+}
+#demoModal[open] {
+  display: flex;
+  flex-direction: column;
+}
+#demoModal::backdrop {
+  background: rgba(5, 9, 18, 0.7);
+}
+.demo-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+}
+.demo-actions {
+  display: flex;
+  gap: 8px;
+}
+.demo-note {
+  font-size: 13px;
+  color: var(--mut);
+  padding: 6px 14px;
+}
+#demoFrame {
+  flex: 1;
+  width: 100%;
+  border: 0;
+  background: #fff;
 }
 .skgrid {
   display: grid;
