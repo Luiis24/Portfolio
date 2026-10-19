@@ -153,7 +153,7 @@ const PROJECTS = [
     tech: ["HTML5", "CSS3", "JavaScript", "localStorage"], keys: ["js"]
   },
   {
-    repo: "NovaBank", demo: "",
+    repo: "NovaBank", demo: "https://simulationnovabank.netlify.app/",
     t: { es: "NovaBank: micro frontends", en: "NovaBank: micro frontends" },
     d: {
       es: "Portal bancario ficticio: un shell carga en tiempo de ejecución un simulador de crédito y un cotizador de seguros con Module Federation. Cada pieza también se compila como widget autónomo configurable con atributos data-*.",
@@ -162,7 +162,7 @@ const PROJECTS = [
     tech: ["React", "TypeScript", "Vite", "Module Federation"], keys: ["react"]
   },
   {
-    repo: "iot-dashboard", demo: "",
+    repo: "iot-dashboard", demo: "https://iot-dashboard-simulator.netlify.app/",
     t: { es: "Dashboard IoT en tiempo real", en: "Real-time IoT dashboard" },
     d: {
       es: "Monitoreo de temperatura y humedad con nodos ESP32 simulados: lecturas cada 500 ms, historial navegable, niveles aceptables editables, alertas, y comandos de apagado y reinicio. Incluye diseño documentado hacia AWS IoT.",
