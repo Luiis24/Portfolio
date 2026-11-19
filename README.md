@@ -2,7 +2,7 @@
 
 Este repositorio contiene el código fuente de mi portafolio como desarrollador.
 
-El objetivo de este portafolio es mostrar mi experiencia, proyectos empresariales y habilidades técnicas como **Desarrollador Web Full Stack**, destacando mi trabajo con **Angular, TypeScript, Java y Spring Boot**.
+El objetivo de este portafolio es mostrar mi experiencia, proyectos empresariales y habilidades técnicas como **Desarrollador Web Full Stack**, destacando mi trabajo con **Angular, TypeScript, Java, Spring Boot, NestJS y Next.js**.
 
 ## 🚀 Portafolio en Línea
 
@@ -16,7 +16,7 @@ Puedes ver la versión desplegada aquí:
 
 Soy un **Desarrollador Web Full Stack** con más de **2 años de experiencia** en entornos de producción, desarrollando y manteniendo aplicaciones web empresariales.
 
-Mi principal experiencia se centra en el diseño de arquitecturas escalables para frontend con **Angular** y el desarrollo de servicios backend robustos utilizando **Java y Spring Boot**. Estoy comprometido con la escritura de **código limpio (Clean Code)**, la aplicación de los **principios SOLID** y el trabajo bajo **metodologías ágiles (Scrum/Kanban)** para entregar software de alta calidad.
+Mi experiencia se centra en el frontend con **Angular, TypeScript y Next.js** y en el desarrollo de backends con **Java y Spring Boot** y con **NestJS y Prisma**. Actualmente trabajo como desarrollador full stack en el lanzamiento de la v1 de una plataforma B2B de gestión de riesgos con IA generativa. Estoy comprometido con la escritura de **código limpio (Clean Code)**, la aplicación de los **principios SOLID** y el trabajo bajo **metodologías ágiles (Scrum/Kanban)** para entregar software de alta calidad.
 
 ---
 
@@ -35,6 +35,8 @@ Los proyectos se definen en el arreglo `PROJECTS` de `script.js` (ES/EN). Para p
 | **Reto E-Commerce tryCatch** (5.º lugar) | Go (Gin), PostgreSQL, JavaScript | — |
 | **Gestión de pólizas** · prueba técnica | Node.js, Express, SQLite, JavaScript | — |
 | **Bike Store** | React, Vite, Node.js, PostgreSQL | — |
+| **Gestión de usuarios** · prueba técnica Symplifica | Vue 3, Java, Spring Boot, PostgreSQL, Flyway, Docker | ✅ Render |
+| **LinkedIn Banner Studio** | HTML, CSS, JavaScript, Canvas API | ✅ Netlify |
 
 Cada tecnología de la sección *Tecnologías* es clicable y filtra los proyectos donde se usa.
 
@@ -50,6 +52,8 @@ Cada tecnología de la sección *Tecnologías* es clicable y filtra los proyecto
 - TypeScript
 - JavaScript (ES6+)
 - React
+- Next.js
+- Vue 3
 - HTML5
 - CSS3
 - SASS / SCSS
@@ -61,6 +65,8 @@ Cada tecnología de la sección *Tecnologías* es clicable y filtra los proyecto
 
 - Java 8+
 - Spring Boot (Spring MVC)
+- NestJS
+- Prisma
 - APIs REST
 - Node.js
 - JSON
@@ -81,6 +87,7 @@ Cada tecnología de la sección *Tecnologías* es clicable y filtra los proyecto
 - Kanban
 - Code Reviews
 - Pull Requests
+- Cursor y Claude Code (asistentes de IA)
 
 ---
 

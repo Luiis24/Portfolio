@@ -1,14 +1,21 @@
 const EN = {
   nAbout: "About", nExp: "Experience", nProj: "Projects", nSkills: "Skills", nContact: "Contact",
   avail: "Available · remote work",
-  lead: "I build enterprise applications with Angular and Spring Boot. 2+ years in production in healthcare software, fixing real bugs and mentoring other developers.",
+  lead: "I build enterprise applications with Angular, Spring Boot, NestJS and Next.js. 2+ years in production: healthcare software and now a B2B platform with generative AI.",
   viewProjects: "View projects", downloadCV: "Download CV", hire: "Let's talk",
   s1: "years in production", s2: "published projects", s3: "technologies", s4: "English",
   aboutTitle: "About me",
-  aboutText: "I'm a Full Stack developer with 2+ years in production environments. My strength is frontend with Angular and TypeScript, and I build Java and Spring Boot backends with layered architecture (Controller, Service, DAO, DTOs and Mappers). I work in agile teams with Scrum and Kanban, and I care about clean code, SOLID, and testing everything with Postman before delivery.",
+  aboutText: "I'm a Full Stack developer with 2+ years in production environments. My strength is frontend with Angular, TypeScript and Next.js, and I build backends in Java and Spring Boot (layered architecture, DTOs and Mappers) and in NestJS with Prisma. I work in agile teams with Scrum and Kanban, I QA what I ship, I listen to end users, and I care about clean code and SOLID.",
   eduTitle: "Education", edu1: "Systems Engineering", now: "present", edu2: "Software Analysis and Development Technologist", langs: "Languages", langsV: "Spanish native · English B2",
   expTitle: "Experience",
-  j1t: "Web Developer", j1d: "Oct 2024 – Jul 2026", j1c: "Medical software · Hybrid",
+  j0t: "Full Stack Developer", j0d: "Nov 2026 – Present", j0c: "B2B platform with generative AI · On-site",
+  j0a: "Full stack development with NestJS, Prisma, Next.js and TypeScript for the v1 launch of a B2B risk and process management platform with generative AI.",
+  j0b: "Published the official landing page and wrote the legal documents (terms, privacy, cancellation and DPA) required by Google Play and the App Store.",
+  j0c2: "Do manual QA: I validate every change before shipping it and catch bugs before production.",
+  j0d2: "Prioritize and track tasks with Scrum, and turn end-user feedback into product improvements.",
+  j0e: "Set up the Git workflow and wrote the onboarding documentation for new developers.",
+  j0f: "Work daily with AI assistants such as Cursor and Claude Code.",
+  j1t: "Full Stack Developer", j1d: "Oct 2024 – Jul 2026", j1c: "Medical software · Hybrid",
   j1a: "Built full stack features in internal medical applications with Angular, TypeScript, Java and Spring Boot.",
   j1b: "Built end-to-end backends with layered architecture, DTOs and Mappers.",
   j1c2: "Wrote SQL queries on MySQL and generated dynamic reports with JasperSoft.",
@@ -31,8 +38,8 @@ const EN = {
   sent: "Opening your email app. If nothing opens, write to nandoarmo01@gmail.com."
 };
 const ROLES = {
-  es: ["Desarrollador Full Stack", "Angular + TypeScript", "Java + Spring Boot", "APIs REST y reportes"],
-  en: ["Full Stack Developer", "Angular + TypeScript", "Java + Spring Boot", "REST APIs and reports"]
+  es: ["Desarrollador Full Stack", "Angular + TypeScript", "Java + Spring Boot", "NestJS + Next.js", "APIs REST y reportes"],
+  en: ["Full Stack Developer", "Angular + TypeScript", "Java + Spring Boot", "NestJS + Next.js", "REST APIs and reports"]
 };
 const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
 const store = (k, v) => { try { return v === undefined ? localStorage.getItem(k) : localStorage.setItem(k, v); } catch { return null; } };
@@ -130,10 +137,28 @@ const UI = {
   es: { all: "Todos", live: "Desplegados", demo: "Ver demo", code: "Código", deployed: "Desplegado", codeOnly: "Solo código", github: "GitHub", api: "API", none: "Ningún proyecto con este filtro." },
   en: { all: "All", live: "Deployed", demo: "Live demo", code: "Code", deployed: "Deployed", codeOnly: "Code only", github: "GitHub", api: "API", none: "No projects match this filter." }
 };
-// keys de filtro: live (tiene demo), react, angular, node, go, dotnet, php, docker, sql, js
-const FILTERS = [["live", null], ["react", "React"], ["angular", "Angular"], ["node", "Node.js"], ["go", "Go"], ["dotnet", ".NET"], ["php", "PHP / Laravel"], ["docker", "Docker"], ["sql", "SQL"], ["js", "JavaScript"]];
+// keys de filtro: live (tiene demo), react, angular, vue, java, node, go, dotnet, php, docker, sql, js
+const FILTERS = [["live", null], ["react", "React"], ["angular", "Angular"], ["node", "Node.js"], ["go", "Go"], ["dotnet", ".NET"], ["php", "PHP / Laravel"], ["java", "Java / Spring"], ["vue", "Vue"], ["docker", "Docker"], ["sql", "SQL"], ["js", "JavaScript"]];
 // Para publicar una demo, pon su URL en "demo".
 const PROJECTS = [
+  {
+    repo: "Prueba-Symplifica", demo: "https://prueba-symplifica.onrender.com/",
+    t: { es: "Gestión de usuarios (prueba técnica Symplifica)", en: "User management (Symplifica technical test)" },
+    d: {
+      es: "CRUD full stack de usuarios: SPA en Vue 3 servida desde el mismo JAR de Spring Boot, migraciones con Flyway sobre PostgreSQL, pruebas con Testcontainers y Docker multi-etapa desplegado en Render. Lo amplié y desplegué después de la prueba en vivo.",
+      en: "Full stack user CRUD: a Vue 3 SPA served from the same Spring Boot JAR, Flyway migrations on PostgreSQL, Testcontainers tests and a multi-stage Docker build deployed on Render. I extended and deployed it after the live test."
+    },
+    tech: ["Vue 3", "Vite", "Java", "Spring Boot", "PostgreSQL", "Flyway", "Docker"], keys: ["vue", "java", "docker", "sql", "js"]
+  },
+  {
+    repo: "LinkedIn-Banner-Generator", demo: "https://link3dinbannergenerator.netlify.app/",
+    t: { es: "LinkedIn Banner Studio", en: "LinkedIn Banner Studio" },
+    d: {
+      es: "Herramienta para diseñar tu banner de LinkedIn con vista previa en vivo y exportación a 800 × 200 px. Tecnologías con color propio, fondos personalizables, 8 tipografías, modo oscuro/claro y español/inglés. Todo corre en el navegador, sin subir datos a ningún servidor.",
+      en: "Tool to design your LinkedIn banner with a live preview and export at 800 × 200 px. Per-technology colors, custom backgrounds, 8 fonts, dark/light mode and Spanish/English. Everything runs in the browser, with no data uploaded to any server."
+    },
+    tech: ["HTML5", "CSS3", "JavaScript", "Canvas API", "html2canvas"], keys: ["js"]
+  },
   {
     repo: "MediCore", demo: "https://medicore-304b.onrender.com/",
     t: { es: "MediCore: gestión clínica", en: "MediCore: clinic management" },
